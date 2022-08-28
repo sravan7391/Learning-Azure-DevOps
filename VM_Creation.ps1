@@ -7,7 +7,6 @@ param(
     [Parameter(Mandatory=$true)][string] $VMUname,
     [Parameter(Mandatory=$true)][string] $VMPwd,
     [Parameter(Mandatory=$true)][string] $VMSize
- 
 )
 $ErrorActionPreference  = "stop"
 [console]::ResetColor()
@@ -19,6 +18,7 @@ Write-host "----------------------------------------------------"
 #Check RG Status
 #$RGStatus = az network exists -n $RVnetName
 Write-Host Hello VM 
+#az vm create --resource-group $RGName --name $VMImage --image $URN --vnet-name $RVnetName --subnet $SubnetName --admin-username $VMUname --admin-password $VMPwd --size $VMSize
 az vm create --resource-group $RGName --name $VMImage --image $URN --vnet-name $RVnetName --subnet $SubnetName --admin-username $VMUname --admin-password $VMPwd --size $VMSize
 # if ($RGStatus -eq $true)
 # {
