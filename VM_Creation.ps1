@@ -33,7 +33,7 @@ if($VMStatus -eq $false){
    az vm create --resource-group $RGName --name $VmName --image $Urn --vnet-name $VnetName --subnet $SubnetName --admin-username $Username --admin-password $Password --size $VmSize
 }
 else{
-   write-host $VMStatus
+   az vm list -d -o table --query "[?name=='$VmName']"
 }
 #==================================================================
 
