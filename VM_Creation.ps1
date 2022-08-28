@@ -26,6 +26,7 @@ if($VMStatus -eq $true){
 else{
      Write-Host creating VM
     az vm create --resource-group $RGName --name $VmName --image $Urn --vnet-name $VnetName --subnet $SubnetName --admin-username $Username --admin-password $Password --size $VmSize
+    Write-Host $VMStatus
  }
 
 # if($VMStatus -eq $false){
