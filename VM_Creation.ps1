@@ -32,7 +32,7 @@ if($VMStatus -match $RGName){
    write-host $VMStatus
 }
 else{
-   write-host Error occured at handling logic
+   write-host Error occured at handling logic (Trial 2)
 }
 #==================================================================
 
