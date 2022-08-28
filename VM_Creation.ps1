@@ -22,7 +22,7 @@ $RGStatus = az network exists -n $RGName
 
 if ($RGStatus -eq $true)
 {
-    az vm create --resource-group HUB-RG --name HUB_WINVM --image $URN --vnet-name $RVnetName --subnet $SubnetName --admin-username $VMUname --admin-password $VMPwd --size $VMSize
+    az vm create --resource-group $RGName --name $VMImage --image $URN --vnet-name $RVnetName --subnet $SubnetName --admin-username $VMUname --admin-password $VMPwd --size $VMSize
 }
 else{
     Write-Host Network $RGStatus already exists
