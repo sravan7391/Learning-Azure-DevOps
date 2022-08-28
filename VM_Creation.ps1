@@ -32,7 +32,7 @@ if($VMStatus -eq $true){
    write-host $VMStatus
 }
 else{
-   write-host Error occured at handling logic (Trial 2)
+   write-host Error occured at handling logic
 }
 #==================================================================
 
