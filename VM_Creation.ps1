@@ -18,7 +18,7 @@ Write-Host resourcegroup location is $RGLocation
 Write-Host resourcegroup name is $RGName
 Write-host "----------------------------------------------------"
 #Check RG Status
-$RGStatus = az network exists -n $RGName
+$RGStatus = az network exists -n $RVnetName
 
 if ($RGStatus -eq $true)
 {
