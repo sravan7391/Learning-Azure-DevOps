@@ -28,7 +28,7 @@ Write-Host "=========================================================="
 #     az vm create --resource-group $RGName --name $VmName --image $Urn --vnet-name $VnetName --subnet $SubnetName --admin-username $Username --admin-password $Password --size $VmSize
 #  }
 
-if($VMStatus -eq $true{
+if($VMStatus -eq $true){
    write-host $VMStatus
 }
 else{
