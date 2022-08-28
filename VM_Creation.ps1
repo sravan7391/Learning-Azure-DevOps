@@ -16,11 +16,6 @@ write-host "========================================================="
 write-host resourcegroupname is $RGName
 write-host vnetname is $VnetName
 write-host SubnetName is $SubnetName
-write-host Urn is $Urn
-write-host VMname is $VmName
-write-host Username is $Username
-write-host Password is $Password
-write-host VMSize is $VmSize
 Write-Host "=========================================================="
 
 #Checking resourcegroup status. if exits or not
@@ -28,8 +23,6 @@ Write-Host "=========================================================="
 # if($vnetStatus -eq $false){
     Write-Host creating VM
     az vm create --resource-group $RGName --name $VmName --image $Urn --vnet-name $VnetName --subnet $SubnetName --admin-username $Username --admin-password $Password --size $VmSize
-
-
 # }
 # else{
     # Write-Host vnet $VnetName already exists
@@ -37,5 +30,5 @@ Write-Host "=========================================================="
 #==================================================================
 
 Write-Host "----------------------------------------------------"
-Write-Host "-- script finished ($scriptName)"
+Write-Host "END OF SCRIPT ($scriptName)"
 Write-Host "------------------------------------------"
