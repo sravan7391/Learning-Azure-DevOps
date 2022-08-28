@@ -19,9 +19,9 @@ write-host SubnetName is $SubnetName
 Write-Host "=========================================================="
 
 #Checking resourcegroup status. if exits or not
- $VMStatus =  Get-AzVM -Location "EastUS"
+ $VMStatus =  az vm list -d -o table --query "[?name=='$VmName']"
 if($VMStatus -eq $true){
-     Write-Host vnet $VMName already exists
+     Write-Host $VMStatus
 }
 else{
      Write-Host creating VM
