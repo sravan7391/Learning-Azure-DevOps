@@ -14,7 +14,6 @@ $ErrorActionPreference  = "stop"
 $ScriptName = $MyInvocation.MyCommand.Name
 
 Write-host "----------------------------------------------------"
-Write-Host resourcegroup location is $RGLocation
 Write-Host resourcegroup name is $RGName
 Write-host "----------------------------------------------------"
 #Check RG Status
@@ -27,6 +26,5 @@ az vm create --resource-group $RGName --name $VMImage --image $URN --vnet-name $
 # else{
 #     Write-Host Network $RGStatus already exists
 # }
-Write-Host "Committed..!"
 #======================
 Write-Host "End of Script ($ScriptName)"
