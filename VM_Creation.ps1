@@ -19,14 +19,14 @@ write-host SubnetName is $SubnetName
 Write-Host "=========================================================="
 
 #Checking resourcegroup status. if exits or not
-# $vnetStatus = az network vnet exists -g $RGName -n $VnetName
-# if($vnetStatus -eq $false){
-    Write-Host creating VM
+ $VMStatus =  Get-AzVM -Location "EastUS"
+if($VMStatus -eq $true){
+     Write-Host vnet $VMName already exists
+}
+else{
+     Write-Host creating VM
     az vm create --resource-group $RGName --name $VmName --image $Urn --vnet-name $VnetName --subnet $SubnetName --admin-username $Username --admin-password $Password --size $VmSize
-# }
-# else{
-    # Write-Host vnet $VnetName already exists
-# }
+ }
 #==================================================================
 
 Write-Host "----------------------------------------------------"
