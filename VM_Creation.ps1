@@ -19,14 +19,14 @@ Write-Host resourcegroup name is $RGName
 Write-host "----------------------------------------------------"
 #Check RG Status
 #$RGStatus = az network exists -n $RVnetName
-
-if ($RGStatus -eq $true)
-{
-    az vm create --resource-group $RGName --name $VMImage --image $URN --vnet-name $RVnetName --subnet $SubnetName --admin-username $VMUname --admin-password $VMPwd --size $VMSize
-}
-else{
-    Write-Host Network $RGStatus already exists
-}
+az vm create --resource-group $RGName --name $VMImage --image $URN --vnet-name $RVnetName --subnet $SubnetName --admin-username $VMUname --admin-password $VMPwd --size $VMSize
+# if ($RGStatus -eq $true)
+# {
+#     az vm create --resource-group $RGName --name $VMImage --image $URN --vnet-name $RVnetName --subnet $SubnetName --admin-username $VMUname --admin-password $VMPwd --size $VMSize
+# }
+# else{
+#     Write-Host Network $RGStatus already exists
+# }
 
 #======================
 Write-Host "End of Script ($ScriptName)"
