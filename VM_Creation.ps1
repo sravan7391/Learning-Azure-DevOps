@@ -28,11 +28,12 @@ Write-Host "=========================================================="
 #     az vm create --resource-group $RGName --name $VmName --image $Urn --vnet-name $VnetName --subnet $SubnetName --admin-username $Username --admin-password $Password --size $VmSize
 #  }
 
-if($VMStatus -eq $true){
-   write-host $VMStatus
+if($VMStatus -eq $false){
+   Write-Host creating VM
+   az vm create --resource-group $RGName --name $VmName --image $Urn --vnet-name $VnetName --subnet $SubnetName --admin-username $Username --admin-password $Password --size $VmSize
 }
 else{
-   write-host Error occured at handling logic
+   write-host $VMStatus
 }
 #==================================================================
 
