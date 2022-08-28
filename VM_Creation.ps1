@@ -21,7 +21,7 @@ Write-Host "=========================================================="
 #Checking resourcegroup status. if exits or not
  $VMStatus =  az vm list -d -o table --query "[?name=='$VmName']"
 if($VMStatus -eq $true){
-     Write-Host $VMStatus
+     az vm list -d -o table --query "[?name=='$VmName']"
 }
 else{
      Write-Host creating VM
