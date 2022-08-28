@@ -19,7 +19,8 @@ write-host SubnetName is $SubnetName
 Write-Host "=========================================================="
 
 #Checking resourcegroup status. if exits or not
- $VMStatus =  az vm list -d -o table --query "[?name=='$VmName']"
+ #$VMStatus =  az vm list -d -o table --query "[?name=='$VmName']"
+ $Vstatus = az network vnet exists -g $RGName -n $VnetName
 # if($VMStatus -eq $true){
 #      Write-Host $VMStatus
 # }
@@ -28,8 +29,8 @@ Write-Host "=========================================================="
 #     az vm create --resource-group $RGName --name $VmName --image $Urn --vnet-name $VnetName --subnet $SubnetName --admin-username $Username --admin-password $Password --size $VmSize
 #  }
 
-if($VMStatus -eq $true){
-   write-host $VMStatus
+if($VsStatus -eq $true){
+   write-host $VsStatus
 }
 else{
    write-host Error occured at handling logic
