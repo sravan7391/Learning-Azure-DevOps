@@ -19,7 +19,8 @@ write-host SubnetName is $SubnetName
 Write-Host "=========================================================="
 
 #Checking resourcegroup status. if exits or not
-az vm list -d -o table --query "[?name=='$VmName']"
+$VMStatus = az vm list -d -o table --query "[?name=='$VmName']"
+write-Host $VMStatus
 # if($VMStatus -eq $true){
 #    write-Host Network $VMStatus already exists
 # }
