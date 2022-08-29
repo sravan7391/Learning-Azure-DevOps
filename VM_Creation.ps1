@@ -18,23 +18,22 @@ write-host vnetname is $VnetName
 write-host SubnetName is $SubnetName
 Write-Host "=========================================================="
 
-#Checking virtual machine(s) status. if exits or not
+#Checking resourcegroup status. if exits or not
 # $VMStatus = az vm list -d -o table --query "[?name=='$VmName']"
-$VMStatus = az vm list -g $RGName -d
+$VMStatus = az vm list -g $RGName 
 #write-Host $VmName already exists.
-if($null -eq $VMStatus){
+if($VMStatus -eq $false){
 
    Write-Host creating VM
    az vm create --resource-group $RGName --name $VmName --image $Urn --vnet-name $VnetName --subnet $SubnetName --admin-username $Username --admin-password $Password --size $VmSize
    az vm list -d -o table --query "[?name=='$VmName']"
   
 }
+else{  
 
-# if($VMStatus -eq $false){  
-
-#     write-Host Network $VmName already exists
-#     az vm list -d -o table --query "[?name=='$VmName']"
-#  }
+    write-Host Network $VmName already exists
+    az vm list -d -o table --query "[?name=='$VmName']"
+ }
 
 # if($VMStatus -eq $false){
 #    Write-Host creating VM
