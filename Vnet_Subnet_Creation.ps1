@@ -17,7 +17,7 @@ Write-host "----------------------------------------------------"
 #Check RG Status
 $RGStatus = az network vnet list --resource-group $RGName
 
-if ($RGStatus -eq $true)
+if ($RGStatus -eq $false)
 {
     write-Host Network $RGStatus already exists
     
