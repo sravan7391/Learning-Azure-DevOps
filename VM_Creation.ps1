@@ -22,14 +22,15 @@ Write-Host "=========================================================="
 # $VMStatus = az vm list -d -o table --query "[?name=='$VmName']"
 $VMStatus = az vm list -g $RGName -d
 #write-Host $VmName already exists.
-if($VMStatus -eq $false){
+# if($VMStatus -eq $false){
 
-   Write-Host creating VM
-   az vm create --resource-group $RGName --name $VmName --image $Urn --vnet-name $VnetName --subnet $SubnetName --admin-username $Username --admin-password $Password --size $VmSize
-   az vm list -d -o table --query "[?name=='$VmName']"
+#    Write-Host creating VM
+#    az vm create --resource-group $RGName --name $VmName --image $Urn --vnet-name $VnetName --subnet $SubnetName --admin-username $Username --admin-password $Password --size $VmSize
+#    az vm list -d -o table --query "[?name=='$VmName']"
   
-}
-else{  
+# }
+
+if($VMStatus -eq $false){  
 
     write-Host Network $VmName already exists
     az vm list -d -o table --query "[?name=='$VmName']"
