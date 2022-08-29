@@ -14,7 +14,7 @@ Write-host "----------------------------------------------------"
 $RGStatus = az group exists -n $RGName
 # az group create -l $RGLocation -n $RGName
 
-if ($RGStatus -eq $true)
+if ($RGStatus -eq $false)
 {
     az group create -l $RGLocation -n $RGName
 }
