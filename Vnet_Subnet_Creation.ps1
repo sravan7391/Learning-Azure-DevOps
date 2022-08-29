@@ -24,7 +24,7 @@ if ($RGStatus -eq $false)
     
 }
 else {
-    write-Host Network $RGStatus already exists
+    write-Host Network $RVnetName already exists
     
 }
 #======================
