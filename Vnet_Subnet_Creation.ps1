@@ -19,11 +19,12 @@ $RGStatus = az network vnet list --resource-group $RGName
 
 if ($RGStatus -eq $false)
 {
-    write-Host Network $RGStatus already exists
+    az network vnet create -g $RGName -n $RVnetName --address-prefix $VnetRange --subnet-name $SubnetName --subnet-prefix $SubnetRange -l $RGLocation
+    
     
 }
 else {
-    az network vnet create -g $RGName -n $RVnetName --address-prefix $VnetRange --subnet-name $SubnetName --subnet-prefix $SubnetRange -l $RGLocation
+    write-Host Network $RGStatus already exists
     
 }
 #======================
