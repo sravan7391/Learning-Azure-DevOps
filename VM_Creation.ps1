@@ -20,7 +20,7 @@ Write-Host "=========================================================="
 
 #Checking resourcegroup status. if exits or not
 # $VMStatus = az vm list -d -o table --query "[?name=='$VmName']"
-$VMStatus = az vm list --resource-group -d table $RGName
+$VMStatus = az vm list --resource-group -g -d table $RGName
 #write-Host $VmName already exists.
 if($VMStatus -eq $false){
 
