@@ -1,8 +1,6 @@
 param(
    [Parameter(Mandatory=$true)][string] $RGName,
-   [Parameter(Mandatory=$true)][string] $AvailabilitySet,
-   [Parameter(Mandatory=$true)][string] $Location
-
+   [Parameter(Mandatory=$true)][string] $AvailabilitySet
 )
 $ErrorActionPreference = "Stop"
 [Console]::ResetColor()
