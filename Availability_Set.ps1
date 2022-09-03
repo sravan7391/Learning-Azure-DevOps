@@ -19,7 +19,7 @@ if ($RGStatus -eq $false)
 {
     write-host $RGName exists.
 }
-if($AvailabilityStatus -eq $false){
+if($AvailabilityStatus -eq $true){
 
    Write-Host No Sets available.
   
