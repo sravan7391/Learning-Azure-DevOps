@@ -14,14 +14,13 @@ Write-Host "=========================================================="
 # $VMStatus = az vm list -d -o table --query "[?name=='$VmName']"
 $AvailabilityStatus = az vm availability-set list -g $RGName
 #write-Host $VmName already exists.
-az vm availability-set list -g $RGName
-# if( $AvailabilityStatus -eq $false){
+if( $AvailabilityStatus -eq $null{
 
-#    az vm availability-set list -g $RGName
+   az vm availability-set list -g $RGName
   
-# }
-# else{  
-#         Write-host Need to create an Availability Set.
-#  }
+}
+else{  
+        Write-host Need to create an Availability Set.
+ }
  #======================
 Write-Host "End of Script ($ScriptName)"
