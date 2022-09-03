@@ -20,7 +20,7 @@ if( $AvailabilityStatus -eq '' ){
   
 }
 else{  
-        Write-host Need to create an Availability Set.
+        Write-host $AvailabilitySet Available.
  }
  #======================
 Write-Host "End of Script ($ScriptName)"
