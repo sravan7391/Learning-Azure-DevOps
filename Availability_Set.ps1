@@ -14,7 +14,7 @@ Write-Host "=========================================================="
 # $VMStatus = az vm list -d -o table --query "[?name=='$VmName']"
 $AvailabilityStatus = az vm availability-set list -g $RGName
 #write-Host $VmName already exists.
-if( ! $AvailabilityStatus ){
+if( $AvailabilityStatus = $false){
 
    Write-Host No Availability Sets found.
   
