@@ -12,8 +12,13 @@ Write-Host "=========================================================="
 
 #Checking resourcegroup status. if exits or not
 # $VMStatus = az vm list -d -o table --query "[?name=='$VmName']"
+$RGStatus = az group exists -n $RGName
 $AvailabilityStatus = az vm availability-set list -g $RGName
 #write-Host $VmName already exists.
+if ($RGStatus -eq $false)
+{
+    write-host $RGName exists.
+}
 if( $AvailabilityStatus -eq '' ){
 
    Write-Host No Sets available.
