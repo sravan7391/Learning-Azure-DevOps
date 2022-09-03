@@ -21,7 +21,7 @@ if ($RGStatus -eq $false)
 }
 if($AvailabilityStatus -eq $false){
 
-   Write-Error No Sets available.
+   Write-Error No Sets available..
   
 }
 else{  
