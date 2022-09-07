@@ -10,7 +10,7 @@
 
 # az vm create --resource-group PLB --name VM4 --availability-set AVSET --size Standard_B1s --vnet-name PLB_Vnet --subnet PLB_Subnet --image UbuntuLTS  --admin-username azureadmin --admin-password “testuser@123456" --nsg PLB_NSG1
 
-az network dns record-set a add-record --resource-group PLB --zone-name techupdate.today
+az network dns zone create -g PLB -n techupdate.today
 
 az resource list -g PLB -o table
 
