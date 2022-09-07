@@ -12,3 +12,4 @@ az vm create  --resource-group PLB  --name VM4 availability-set AVSET —size St
 
 az vm availability-set create  --resource-group PLB  --name AVSET  --platform-fault-domain-count 2 --platform-update-domain-count 2
 
+az resource list -g PLB -o table
