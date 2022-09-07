@@ -6,11 +6,9 @@
 
 az vm availability-set create -n AVSET -g PLB --platform-fault-domain-count 2 --platform-update-domain-count 2 -l centralindia
 
-az vm create  --resource-group PLB  --name VM3 availability-set AVSET —size Standard_B1s --vnet-name PLB_Vnet --subnet PLB_Subnet --image UbuntuLTS  --admin-username azureadmin --admin-password “testuser@123456" --nsg PLB_NSG1
+az vm create -g PLB --name VM3 --availability-set AVSET --vnet-name PLB_Vnet --subnet PLB_Subnet --image UbuntuLTS --admin-username azureadmin --admin-password “testuser@123456" -—size Standard_B1s --nsg PLB_NSG1
 
-az vm create  --resource-group PLB  --name VM4 availability-set AVSET —size Standard_B1s --vnet-name PLB_Vnet --subnet PLB_Subnet --image UbuntuLTS  --admin-username azureadmin --admin-password “testuser@123456" --nsg PLB_NSG1
-
-az vm availability-set create  --resource-group PLB  --name AVSET  --platform-fault-domain-count 2 --platform-update-domain-count 2
+az vm create -g PLB --name VM4 --availability-set AVSET --vnet-name PLB_Vnet --subnet PLB_Subnet --image UbuntuLTS --admin-username azureadmin --admin-password “testuser@123456" -—size Standard_B1s --nsg PLB_NSG1
 
 az resource list -g PLB -o table
 
