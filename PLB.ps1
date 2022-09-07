@@ -10,7 +10,9 @@
 
 # az vm create --resource-group PLB --name VM4 --availability-set AVSET --size Standard_B1s --vnet-name PLB_Vnet --subnet PLB_Subnet --image UbuntuLTS  --admin-username azureadmin --admin-password “testuser@123456" --nsg PLB_NSG1
 
-az network dns zone create -g PLB -n techupdate.today
+#az network dns zone create -g PLB -n techupdate.today
+
+az network lb rule create --resource-group PLB --lb-name myLoadBalancer --name myHTTPRule --protocol tcp --frontend-port 80 --backend-port 80 --frontend-ip-name myFrontEnd --backend-pool-name myBackEndPool --probe-name myHealthProbe --disable-outbound-snat true --idle-timeout 15 --enable-tcp-reset true
 
 az resource list -g PLB -o table
 
