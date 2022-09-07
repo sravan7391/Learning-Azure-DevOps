@@ -12,7 +12,9 @@
 
 #az network dns zone create -g PLB -n techupdate.today
 
-az network lb create --resource-group PLB --name myLoadBalancer --sku Standard --public-ip-address PLB-pip --frontend-ip-name myFrontEnd --backend-pool-name myBackEndPool
+# az network lb create --resource-group PLB --name myLoadBalancer --sku Standard --public-ip-address PLB-pip --frontend-ip-name myFrontEnd --backend-pool-name myBackEndPool
+
+az network lb probe create --resource-group PLB --lb-name myLoadBalancer --name myHealthProbe --protocol tcp --port 80
 
 # az network lb rule create --resource-group PLB --lb-name myLoadBalancer --name myHTTPRule --protocol tcp --frontend-port 80 --backend-port 80 --frontend-ip-name myFrontEnd --backend-pool-name myBackEndPool --probe-name myHealthProbe --disable-outbound-snat true --idle-timeout 15 --enable-tcp-reset true
 
