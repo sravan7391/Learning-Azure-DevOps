@@ -26,13 +26,13 @@ if($VMStatus -eq ""){
 
    Write-Host creating VM
    az vm create --resource-group $RGName --name $VmName --image $Urn --vnet-name $VnetName --subnet $SubnetName --admin-username $Username --admin-password $Password --size $VmSize
-   az vm list -g $RGName -d -o table
+   az vm list -g $RGName -o table
   
 }
 else{  
 
-    write-Host Network $VmName already exists
-    az vm list -g $RGName -d -o table
+    write-Host $VmName already exists
+    az vm list -g $RGName -o table
  }
 
 # if($VMStatus -eq $false){
