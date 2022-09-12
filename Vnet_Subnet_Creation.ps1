@@ -14,18 +14,15 @@ Write-host "----------------------------------------------------"
 Write-Host resourcegroup location is $RGLocation
 Write-Host resourcegroup name is $RGName
 Write-host "----------------------------------------------------"
-#Check RG Status
-$RGStatus = az network vnet list --resource-group $RGName
+#Check Vnet, Subnet Status
+$RGStatus = az network vnet list --resource-group $RGName --vnet-name $RVnetName
 
-if ($RGStatus -eq $false)
+if ($RGStatus -notcontains $RVnetName)
 {
-    az network vnet create -g $RGName -n $RVnetName --address-prefix $VnetRange --subnet-name $SubnetName --subnet-prefix $SubnetRange -l $RGLocation
-    
-    
+    az network vnet create -g $RGName -n $RVnetName --address-prefix $VnetRange --subnet-name $SubnetName --subnet-prefix $SubnetRange -l $RGLocation   
 }
 else {
-    write-Host Network $RVnetName already exists
-    
+    write-Host Network $RGName, $RVnetName already exists   
 }
 #======================
 Write-Host "End of Script ($ScriptName)"
