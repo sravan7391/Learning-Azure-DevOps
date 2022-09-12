@@ -24,6 +24,6 @@ if ($RGStatus1 -eq "")
 }
 else {
     write-Host Network $RGName, $RVnetName already exists   
-    az network vnet list --resource-group $RGName -n $RVnetName -o table
+    # az network vnet list --resource-group $RGName -o table
 }
 write-Host "----------------- End of Script ($ScriptName) -----------------"
