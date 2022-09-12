@@ -20,7 +20,7 @@ $RGStatus1 = az network vnet list -o table --query "[?name=='$RVnetName']"
 
 if ($RGStatus1 -eq "")
 {
-    az network vnet create -g $RGName --vnet-name $RVnetName --address-prefix $VnetRange --subnet-name $SubnetName --subnet-prefix $SubnetRange -l $RGLocation   
+    az network vnet create -g $RGName -n $RVnetName --address-prefix $VnetRange --subnet-name $SubnetName --subnet-prefix $SubnetRange -l $RGLocation   
 }
 else {
     write-Host Network $RGName, $RVnetName already exists   
