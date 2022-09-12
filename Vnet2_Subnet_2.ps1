@@ -29,3 +29,4 @@ else {
     write-Host Network $RGName, $RVnetName2 already exists   
     az network vnet subnet list -g $RGName --vnet-name $RVnetName2 -o table
 }
+write-Host "----------------- End of Script ($ScriptName) -----------------"
