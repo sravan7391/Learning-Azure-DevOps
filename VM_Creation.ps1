@@ -25,7 +25,7 @@ $VMStatus =  az vm list -d -o table --query "[?name=='$VmName']"
 if($VMStatus -eq ""){
 
    Write-Host creating VM
-   az vm create --resource-group $RGName --name $VmName --image $Urn --vnet-name $VnetName --subnet $SubnetName --admin-username $Username --admin-password $Password --size $VmSize
+   az vm create --resource-group $RGName --name $VmName --image $Urn --vnet-name $VnetName --subnet $SubnetName --admin-username $Username --admin-password $Password --size $VmSize --public-ip-sku Standard
    az vm list -g $RGName -o table
   
 }
