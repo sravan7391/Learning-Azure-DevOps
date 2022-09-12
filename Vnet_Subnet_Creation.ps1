@@ -23,6 +23,7 @@ if ($RGStatus -notcontains $RVnetName)
 }
 else {
     write-Host Network $RGName, $RVnetName already exists   
+    az network vnet list --resource-group $RGName --vnet-name $RVnetName -o table
 }
 #======================
 Write-Host "End of Script ($ScriptName)"
