@@ -16,7 +16,7 @@ Write-Host resourcegroup name is $RGName
 Write-host "----------------------------------------------------"
 #Check Vnet, Subnet Status
 # $RGStatus = az network vnet list --resource-group $RGName --vnet-name $RVnetName
-$RGStatus1 = az network vnet list -d -o table --query "[?name=='$RVnetName']"
+$RGStatus1 = az network vnet list -o table --query "[?name=='$RVnetName']"
 
 if ($RGStatus1 -eq "")
 {
@@ -26,5 +26,4 @@ else {
     write-Host Network $RGName, $RVnetName already exists   
     az network vnet list --resource-group $RGName --vnet-name $RVnetName -o table
 }
-======================
-Write-Host "End of Script ($ScriptName)"
+write-Host "----------------- End of Script ($ScriptName) -----------------"
