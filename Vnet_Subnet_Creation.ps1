@@ -17,13 +17,14 @@ Write-host "----------------------------------------------------"
 #Check Vnet, Subnet Status
 $RGStatus = az network vnet list --resource-group $RGName --vnet-name $RVnetName
 
-if ($RGStatus -notcontains $RVnetName)
-{
-    az network vnet create -g $RGName -n $RVnetName --address-prefix $VnetRange --subnet-name $SubnetName --subnet-prefix $SubnetRange -l $RGLocation   
-}
-else {
-    write-Host Network $RGName, $RVnetName already exists   
-    az network vnet list --resource-group $RGName --vnet-name $RVnetName -o table
-}
+az network vnet list --resource-group $RGName --vnet-name $RVnetName
+# if ($RGStatus -notcontains $RVnetName)
+# {
+#     az network vnet create -g $RGName -n $RVnetName --address-prefix $VnetRange --subnet-name $SubnetName --subnet-prefix $SubnetRange -l $RGLocation   
+# }
+# else {
+#     write-Host Network $RGName, $RVnetName already exists   
+#     az network vnet list --resource-group $RGName --vnet-name $RVnetName -o table
+# }
 #======================
 Write-Host "End of Script ($ScriptName)"
