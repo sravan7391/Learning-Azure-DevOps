@@ -16,7 +16,7 @@ $scriptName = $MyInvocation.MyCommand.Name
 write-host "========================================================="
 write-host resourcegroupname is $RGName
 write-host vnetname is $VnetName
-write-host SubnetName is $SubnetName
+write-host SubnetName is $SubnetName2
 Write-Host "=========================================================="
 
 #Checking resourcegroup status. if exits or not
