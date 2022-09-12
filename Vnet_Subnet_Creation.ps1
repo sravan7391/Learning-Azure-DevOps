@@ -16,7 +16,7 @@ Write-Host resourcegroup name is $RGName
 Write-host "----------------------------------------------------"
 #Check Vnet, Subnet Status
 # $RGStatus = az network vnet list --resource-group $RGName --vnet-name $RVnetName
-$RGStatus1 = az network vnet list -o table --query "[?name=='$RGName']"
+$RGStatus1 = az network vnet list -o table --query "[?name=='$RVnetName']"
 
 if ($RGStatus1 -eq "")
 {
