@@ -5,7 +5,7 @@ param(
     # [Parameter(Mandatory=$true)][string] $RVnetRange2,
     [Parameter(Mandatory=$true)][string] $SubnetName,
     # [Parameter(Mandatory=$true)][string] $SubnetName2,
-    [Parameter(Mandatory=$true)][string] $SubnetRange,
+    [Parameter(Mandatory=$true)][string] $SubnetRange
     # [Parameter(Mandatory=$true)][string] $SubnetRange2
 )
 $ErrorActionPreference  = "stop"
