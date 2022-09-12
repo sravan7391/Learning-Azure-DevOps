@@ -2,7 +2,7 @@ param(
     [Parameter(Mandatory=$true)][string] $RGLocation,
     [Parameter(Mandatory=$true)][string] $RGName,
     [Parameter(Mandatory=$true)][string] $RVnetName,
-    # [Parameter(Mandatory=$true)][string] $RVnetRange2,
+     [Parameter(Mandatory=$true)][string] $RVnetRange,
     [Parameter(Mandatory=$true)][string] $SubnetName,
     # [Parameter(Mandatory=$true)][string] $SubnetName2,
     [Parameter(Mandatory=$true)][string] $SubnetRange
