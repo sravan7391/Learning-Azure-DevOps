@@ -17,7 +17,7 @@ Write-host "----------------------------------------------------"
 # $RGStatus = az network vnet list --resource-group $RGName --vnet-name $RVnetName
 $RGStatus1 = az network bastion list -o table --query "[?name=='$RGName']"
 
-if ($RGStatus1 -eq $null)
+if ($RGStatus1 -eq "")
 {
     az network public-ip create --resource-group $RGName --name $MyIp --sku Standard --location $RGLocation
     az network bastion create --location $RGLocation --name $RBastionName --public-ip-address $MyIp --resource-group $RGName --vnet-name $RVnetName
