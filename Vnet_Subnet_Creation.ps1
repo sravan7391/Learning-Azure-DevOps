@@ -27,4 +27,4 @@ else {
     az network vnet subnet list -g $RGName --vnet-name $RVnetName
     # az network vnet list --resource-group $RGName -o table
 }
-write-Host "----------------- End of Script ($ScriptName) -----------------"
+write-Host "----------------- End of Script ($ScriptName) ------------------"
