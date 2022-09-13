@@ -9,7 +9,6 @@ param(
 $ErrorActionPreference  = "stop"
 [console]::ResetColor()
 $ScriptName = $MyInvocation.MyCommand.Name
-
 Write-host "----------------------------------------------------"
 Write-Host resourcegroup location is $RGLocation
 Write-Host resourcegroup name is $RGName
