@@ -14,7 +14,7 @@ $ErrorActionPreference = "Stop"
 $scriptName = $MyInvocation.MyCommand.Name
 write-host "========================================================="
 write-host resourcegroupname is $RGName
-write-host vnetname is $VnetName
+write-host vnetname is $VnetName2
 write-host SubnetName is $SubnetName2
 Write-Host "=========================================================="
 
