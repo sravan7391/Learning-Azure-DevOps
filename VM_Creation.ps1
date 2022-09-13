@@ -1,7 +1,6 @@
 param(
    [Parameter(Mandatory=$true)][string] $RGName,
-   [Parameter(Mandatory=$true)][string] $VnetName,
-   [Parameter(Mandatory=$true)][string] $SubnetName,
+   [Parameter(Mandatory=$true)][string] $VnetName2,
    [Parameter(Mandatory=$true)][string] $SubnetName2,
    [Parameter(Mandatory=$true)][string] $Urn,
    [Parameter(Mandatory=$true)][string] $VmName,
