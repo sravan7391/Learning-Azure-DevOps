@@ -23,7 +23,7 @@ if ($RGStatus1 -eq $null)
     az network bastion create --location $RGLocation --name $RBastionName --public-ip-address $MyIp --resource-group $RGName --vnet-name $RVnetName
 }
 else {
-    write-Host "orange" Network $RGName, $RBastionName already exists   
+    write-Host Network $RGName, $RBastionName already exists   
     az network bastion show --name $RBastionName --resource-group $RGName -o table
     # az network vnet list --resource-group $RGName -o table
 }
