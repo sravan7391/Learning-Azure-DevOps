@@ -23,12 +23,12 @@ if($VnetPeeringStatus -ne ""){
    az network vnet peering show -g $RGName  -n $LinkName1 --vnet-name $VnetName
 }
 else {
-   Write-Error Failed to Create Network Peering
+   az network vnet peering list -g $RGName --vnet-name $VnetName
 }
 
-if($VnetPeeringStatus -contains $BastionVnet){
+if($VnetPeeringStatus -ne ""){
    az network vnet peering create -g $RGName -n $LinkName2 --vnet-name $BastionVnet --remote-vnet $VnetName --allow-vnet-access
-   az network vnet peering show -g $RGName  -n $LinkName2 --vnet-name $BastionVnet
+   az network vnet peering list -g $RGName  --vnet-name $BastionVnet
 }
 else {
    Write-Error Failed to Create Network Peering
