@@ -18,7 +18,6 @@ Write-Host "=========================================================="
 
 $VnetPeeringStatus = az network vnet list --query "[?name=='$RGName']"
 
-
 if($VnetPeeringStatus -contains $VnetName){
    az network vnet list -o table
    az network vnet peering create -g $RGName -n $LinkName1 --vnet-name $VnetName --remote-vnet $BastionVnet --allow-vnet-access
@@ -37,10 +36,8 @@ else {
    Write-Error Failed to Create Network Peering
 }
 
-if(  )
-{
 az network vnet peering sync -g $RGName -n $LinkName1 --vnet-name $VnetName
-}
+
 #==================================================================
 
 Write-Host "----------------------------------------------------"
