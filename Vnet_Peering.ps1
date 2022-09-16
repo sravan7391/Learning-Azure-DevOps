@@ -1,17 +1,17 @@
 param(
    [Parameter(Mandatory=$true)][string] $RGName,
-   [Parameter(Mandatory=$true)][string] $VnetName,
-   [Parameter(Mandatory=$true)][string] $BastionVnet,
    [Parameter(Mandatory=$true)][string] $LinkName1,
-   [Parameter(Mandatory=$true)][string] $LinkName2
+   [Parameter(Mandatory=$true)][string] $LinkName2,
+   [Parameter(Mandatory=$true)][string] $VnetName,
+   [Parameter(Mandatory=$true)][string] $BastionVnet
 )
 $ErrorActionPreference = "Stop"
 [Console]::ResetColor()
 $scriptName = $MyInvocation.MyCommand.Name
 write-host "========================================================="
 write-host resourcegroupname is $RGName
-write-host vnetname is $VnetName
-write-host Vnet is $BastionVnet
+write-host VM: Vnetname: $VnetName
+write-host Bastion-Vnet: $BastionVnet
 Write-Host "=========================================================="
 
 #Checking vnet status. if exits or not
