@@ -4,9 +4,6 @@ param(
    [Parameter(Mandatory=$true)][string] $BastionVnet,
    [Parameter(Mandatory=$true)][string] $LinkName1,
    [Parameter(Mandatory=$true)][string] $LinkName2
-
-  
-
 )
 $ErrorActionPreference = "Stop"
 [Console]::ResetColor()
@@ -21,22 +18,29 @@ Write-Host "=========================================================="
 
 $VnetPeeringStatus = az network vnet list --query "[?name=='$RGName']"
 
+
 if($VnetPeeringStatus -contains $VnetName){
    az network vnet list -o table
-   az network vnet peering create -g $RGName -n $LinkName --vnet-name $VnetName --remote-vnet $BastionVnet --allow-vnet-access
+   az network vnet peering create -g $RGName -n $LinkName1 --vnet-name $VnetName --remote-vnet $BastionVnet --allow-vnet-access
+   az network vnet peering show -g $RGName  -n $LinkName1 --vnet-name $VnetName
 }
 else {
    Write-Error Failed to Create Network Peering
 }
 
-if($VnetPeeringStatus -contains $VnetName){
+if($VnetPeeringStatus -contains $BastionVnet){
    az network vnet list -o table
    az network vnet peering create -g $RGName -n $LinkName2 --vnet-name $BastionVnet --remote-vnet $VnetName --allow-vnet-access
+   az network vnet peering show -g $RGName  -n $LinkName2 --vnet-name $BastionVnet
 }
 else {
-   az network vnet peering list -g $RGName --vnet-name $VnetName
+   Write-Error Failed to Create Network Peering
 }
 
+if(  )
+{
+az network vnet peering sync -g $RGName -n $LinkName1 --vnet-name $VnetName
+}
 #==================================================================
 
 Write-Host "----------------------------------------------------"
