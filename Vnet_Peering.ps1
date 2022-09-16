@@ -16,9 +16,9 @@ Write-Host "=========================================================="
 
 #Checking vnet status. if exits or not
 
-$VnetPeeringStatus = az network vnet list --query "[?name=='$RVnetName']"
+$VnetPeeringStatus = az network vnet list
 
-if($VnetPeeringStatus -ne ""){
+if($VnetPeeringStatus -contains $VnetName){
    az network vnet list -o table
    az network vnet peering create -g MyResourceGroup -n MyVnet1ToMyVnet2 --vnet-name $VnetName --remote-vnet $BastionVnet --allow-vnet-access
    az network vnet peering show -g $RGName -n MyVnet1ToMyVnet2 --vnet-name $VnetName
