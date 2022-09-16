@@ -18,7 +18,7 @@ Write-Host "=========================================================="
 
 $VnetPeeringStatus = az network vnet list -g $RGName
 
-if($VnetPeeringStatus -contains $VnetName){
+if($VnetPeeringStatus -ne ""){
    az network vnet peering create -g $RGName -n $LinkName1 --vnet-name $VnetName --remote-vnet $BastionVnet --allow-vnet-access
    az network vnet peering show -g $RGName  -n $LinkName1 --vnet-name $VnetName
 }
